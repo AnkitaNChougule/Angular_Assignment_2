@@ -1,0 +1,53 @@
+<body class="d-flex ">
+ <div id="display_details">
+    <div id="pdetail">Product Details</div>   
+
+    <h4 id="pid">Product Id : 
+        <span>{{id}}</span>
+    </h4>
+
+    <h4>Product Name : 
+        <span>{{name | titlecase}}</span>
+    </h4>
+
+    <h4>Category :
+        <span>{{category}}</span>
+    </h4>
+
+    <h4>Price :
+        <span >{{price | currency}}</span>
+    </h4>
+
+    <h4 class="sunit">StockUnits :
+        <span >{{Stock_units}} </span>
+        <ng-template [ngIf]="Stock_units >= 10 ">
+            <p style="color: green;"> {{Stock_units}} Stock_units Available </p> 
+       </ng-template>
+        
+       <ng-template [ngIf]="Stock_units < 10 ">
+           <p style="color: orange;"> {{Stock_units}} Stock_units Available </p> 
+      </ng-template>
+
+      <ng-template [ngIf]="Stock_units <= 3 ">
+       <p style="color: red;"> {{Stock_units}} Stock_units Available </p> 
+      </ng-template>
+    </h4>
+   
+    <h4>Release Date :
+        <span> {{release_date | date}} </span>
+    </h4>
+
+    <h4>Serial Number :
+        <span >{{serial_number}}</span>
+    </h4>
+
+    <h4>Description :
+        <span > {{Description}} </span>
+    </h4>
+
+    <button class="btn" (click)="backToProduct()">Back To Product List</button>
+    
+    
+</div>  <!-- end of div display_details -->
+</body>
+
